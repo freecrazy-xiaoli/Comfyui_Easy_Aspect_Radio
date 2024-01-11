@@ -80,7 +80,7 @@ class EasyAspectRatio:
         elif aspect_ratio == "SDXL - 21:9 landscape 1536x640":
             width, height = 1536, 640                
         
-        width, height = height, width
+        width, height = width, height
         
         latent = torch.zeros([batch_size, 4, height // 8, width // 8])
 
