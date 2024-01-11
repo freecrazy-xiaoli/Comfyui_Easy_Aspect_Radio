@@ -34,8 +34,8 @@ class EasyAspectRatio:
                 "batch_size": ("INT", {"default": 1, "min": 1, "max": 64})
             }
         }
-    RETURN_TYPES = ("INT", "INT",  "LATENT", "INT", )
-    RETURN_NAMES = ("width", "height", "empty_latent", "batch_size", )
+    RETURN_TYPES = ("LATENT", )
+    RETURN_NAMES = ("latent", )
     FUNCTION = "Aspect_Ratio"
     CATEGORY = "utils"
 
@@ -84,7 +84,7 @@ class EasyAspectRatio:
         
         latent = torch.zeros([batch_size, 4, height // 8, width // 8])
 
-        return(width, height, {"samples":latent}, batch_size,)    
+        return( {"samples":latent},)    
 
 NODE_CLASS_MAPPINGS = {"EasyAspectRatio": EasyAspectRatio}
 
