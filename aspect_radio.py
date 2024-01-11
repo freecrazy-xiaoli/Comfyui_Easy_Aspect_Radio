@@ -1,6 +1,8 @@
 import torch
 
-class AspectRatio:
+class EasyAspectRatio:
+    def __init__(self):
+        pass
 
     @classmethod
     def INPUT_TYPES(s):
@@ -35,7 +37,7 @@ class AspectRatio:
     RETURN_TYPES = ("INT", "INT",  "LATENT", "INT", )
     RETURN_NAMES = ("width", "height", "empty_latent", "batch_size", )
     FUNCTION = "Aspect_Ratio"
-    CATEGORY = "image"
+    CATEGORY = "utils"
 
     def Aspect_Ratio(self, width, height, aspect_ratio, batch_size):
         
@@ -84,9 +86,6 @@ class AspectRatio:
 
         return(width, height, {"samples":latent}, batch_size,)    
 
-NODE_CLASS_MAPPINGS = {
-    "AspectRatio": AspectRatio
-}
-NODE_DISPLAY_NAME_MAPPINGS = {
-    "AspectRatio": "Aspect Ratio"
-}
+NODE_CLASS_MAPPINGS = {"EasyAspectRatio": EasyAspectRatio}
+
+NODE_DISPLAY_NAME_MAPPINGS = {"EasyAspectRatio": "Easy Aspect Ratio"}
