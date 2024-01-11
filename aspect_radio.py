@@ -1,8 +1,6 @@
 import torch
 
 class AspectRatio:
-    def __init__(self):
-        pass
 
     @classmethod
     def INPUT_TYPES(s):
